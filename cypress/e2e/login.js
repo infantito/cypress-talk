@@ -29,4 +29,15 @@ describe('login', () => {
       expect(localStorage.getItem('profile')).to.eq('Leanne Graham')
     })
   })
+
+  it('should not login when the credentials are empty', () => {
+    cy.visit('/')
+
+    // -- Sign in user
+
+    cy.get('button').click()
+
+    // eslint-disable-next-line no-unused-expressions
+    expect(localStorage.getItem('profile')).to.be.null
+  })
 })
