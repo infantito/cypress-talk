@@ -16,10 +16,22 @@ const Form = () => {
     }))
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault()
 
-    alert(JSON.stringify(credentials, null, 2))
+    const response = await fetch('https://jsonplaceholder.typicode.com/users', {
+      method: 'GET',
+    })
+
+    const users = await response.json()
+
+    const user = users.find(user => user.username.toLowerCase() === credentials.username.toLowerCase())
+
+    if (user) {
+      return alert(`${user.name} | ${user.company.name}`)
+    }
+
+    alert('Usuario y/o contraseña incorrecta')
   }
 
   return (
