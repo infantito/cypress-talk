@@ -28,10 +28,13 @@ const Form = () => {
     const user = users.find(user => user.username.toLowerCase() === credentials.username.toLowerCase())
 
     if (user) {
-      return alert(`${user.name} | ${user.company.name}`)
+      localStorage.setItem('profile', user.name)
+      console.log({ name: localStorage.getItem('profile') })
+
+      return null
     }
 
-    alert('Usuario y/o contraseña incorrecta')
+    localStorage.clear()
   }
 
   return (

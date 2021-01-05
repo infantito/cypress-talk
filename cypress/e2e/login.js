@@ -25,6 +25,8 @@ describe('login', () => {
       expect(response.statusCode).to.eq(200)
 
       expect(response.body).to.be.an('array')
+
+      expect(localStorage.getItem('profile')).to.eq('Leanne Graham')
     })
   })
 })
