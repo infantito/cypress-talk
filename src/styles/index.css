@@ -12,15 +12,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body p {
-  color: #fff;
-}
-
-body a {
-  color: #61dafb;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-style: italic;
+}
+
+#root {
+  background-color: #fff;
+  border-radius: 5px;
+  max-width: 480px;
+  overflow: hidden;
+  width: 100%;
+}
+
+#root * {
+  box-sizing: border-box;
 }
