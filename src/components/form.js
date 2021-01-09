@@ -25,7 +25,10 @@ const Form = () => {
 
     const users = await response.json()
 
-    const user = users.find(user => user.username.toLowerCase() === credentials.username.toLowerCase())
+    const user = users.find(
+      user =>
+        user.username.toLowerCase() === credentials.username.toLowerCase(),
+    )
 
     if (user) {
       localStorage.setItem('profile', user.name)
@@ -43,11 +46,23 @@ const Form = () => {
         <legend>Sign in</legend>
         <div className="form-block">
           <label htmlFor="username">username:</label>
-          <input type="text" name="username" id="username" value={credentials.username} onChange={handleChange} />
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value={credentials.username}
+            onChange={handleChange}
+          />
         </div>
         <div className="form-block">
           <label htmlFor="password">password:</label>
-          <input type="password" name="password" id="password" value={credentials.password} onChange={handleChange} />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={credentials.password}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <button type="submit">Sign in</button>
